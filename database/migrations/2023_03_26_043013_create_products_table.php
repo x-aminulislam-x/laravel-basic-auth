@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id');
             $table->string('name')->nullable();
             $table->longText('detail')->nullable();
             $table->timestamps();
@@ -26,4 +26,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('products');
     }
+
 };
