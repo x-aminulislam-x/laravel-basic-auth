@@ -37,8 +37,8 @@ Route::get('/joke', function () {
     return $joke;
 });
 
-Route::match(['get','post'],'/login', [AuthController::class, 'login'])->name('login');
-Route::match(['get','post'],'/register', [AuthController::class, 'register'])->name('register');
+// Route::match(['get','post'],'/login', [AuthController::class, 'login'])->name('login');
+// Route::match(['get','post'],'/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
