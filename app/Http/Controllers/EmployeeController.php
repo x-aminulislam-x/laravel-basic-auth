@@ -74,8 +74,9 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, Employee $employee)
     {
+        $data = $request->all();
 
-        $employee->update($request->all());
+        $employee->update($data);
 
         return response([ 'employee' => new 
         EmployeeResource($employee), 'message' => 'Success'], 200);

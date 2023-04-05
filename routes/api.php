@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\EmployeeController;
 
 
 /*
@@ -24,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [UserAuthController::class,'register']);
 Route::post('/login', [UserAuthController::class,'login'])->name('login');
 
-Route::apiResource('/employee', 'EmployeeController')->middleware('auth:api');
+Route::apiResource('/employee', EmployeeController::class)->middleware('auth:api');
 
 
 
